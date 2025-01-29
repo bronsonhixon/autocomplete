@@ -1,0 +1,98 @@
+/* Center the content */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subheading {
+  margin: 5px 0 30px;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* The overlay container for typed + suggestion + measure + input */
+.autocomplete-container {
+  position: relative;
+  width: 480px;
+}
+
+/* Hidden measure element for typed text width */
+.measure {
+  position: absolute;
+  visibility: hidden;
+  white-space: pre;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/* typed text (in black) */
+.typed {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  white-space: pre;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #000;
+}
+
+/* suggestion text (in gray) */
+.suggestion {
+  position: absolute;
+  top: 50%;
+  pointer-events: none;
+  white-space: pre;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #999;
+  transform: translateY(-50%);
+}
+
+/* The real input field; text is hidden, caret is visible */
+.autocomplete-container input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  background: transparent;
+  color: transparent;     /* Hide real text */
+  caret-color: black;     /* Caret is black (visible) */
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Stylish Search Button */
+.search-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #2563eb;
+}
