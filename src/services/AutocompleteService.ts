@@ -1,8 +1,12 @@
 // src/services/AutocompleteService.ts
 import axios from "axios";
 
-const API_KEY = "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"; 
-const BASE_URL = "https://api.openai.com/v1/chat/completions";
+const API_KEY = process.env.OPENAI_API_KEY;
+if (!API_KEY) {
+  throw new Error(
+    "OpenAI API Key not found! Make sure you have a .env file with OPENAI_API_KEY set."
+  );
+}const BASE_URL = "https://api.openai.com/v1/chat/completions";
 
 export async function getAutocompleteSuggestions(query: string): Promise<string[]> {
     console.log(`🔍 Sending query to OpenAI: "${query}"`);
